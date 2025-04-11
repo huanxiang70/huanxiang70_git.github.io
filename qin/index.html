@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>亲爱的，看这里</title>
+    <title>真诚道歉</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -12,7 +12,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #fff0f5;
+            background-color: #f0f8ff;
             margin: 0;
             overflow: hidden;
         }
@@ -48,12 +48,12 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .kiss-btn {
-            background-color: #ff6b9d;
+        .forgive-btn {
+            background-color: #4e9af5;
             color: white;
         }
         
-        .no-kiss-btn {
+        .no-forgive-btn {
             background-color: #9d9d9d;
             color: white;
         }
@@ -66,7 +66,7 @@
             position: absolute;
             width: 30px;
             height: 30px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6b9d"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234e9af5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
             background-size: cover;
             pointer-events: none;
             opacity: 0;
@@ -76,53 +76,53 @@
 <body>
     <div class="container">
         <div class="image-container">
-            <img id="cute-image" src="img/yes1.jpg" alt="可爱表情包">
+            <img id="cute-image" src="img/sorry1.jpg" alt="道歉表情包">
         </div>
         <div class="buttons">
-            <button class="kiss-btn" id="kiss-btn">亲亲</button>
-            <button class="no-kiss-btn" id="no-kiss-btn">不亲</button>
+            <button class="forgive-btn" id="forgive-btn">原谅我</button>
+            <button class="no-forgive-btn" id="no-forgive-btn">不原谅</button>
         </div>
     </div>
 
     <script>
         const cuteImage = document.getElementById('cute-image');
-        const kissBtn = document.getElementById('kiss-btn');
-        const noKissBtn = document.getElementById('no-kiss-btn');
+        const forgiveBtn = document.getElementById('forgive-btn');
+        const noForgiveBtn = document.getElementById('no-forgive-btn');
         
-        // 点击不亲按钮
-        noKissBtn.addEventListener('click', () => {
+        // 点击不原谅按钮
+        noForgiveBtn.addEventListener('click', () => {
             // 切换图片
-            cuteImage.src = 'img/no1.jpg';
+            cuteImage.src = 'img/cu.jpeg';
             
-            // 亲亲按钮变大
+            // 原谅按钮变大
             btnSize += 0.2;
-            kissBtn.style.transform = `scale(${btnSize})`;
+            forgiveBtn.style.transform = `scale(${btnSize})`;
             
-            // 让不亲按钮随机移动
+            // 让不原谅按钮随机移动
             setTimeout(() => {
                 const randomX = Math.random() * 100 - 50;
                 const randomY = Math.random() * 100 - 50;
-                noKissBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                noForgiveBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
             }, 100);
         });
         
-        // 点击亲亲按钮
-        kissBtn.addEventListener('click', () => {
-            // 创建爱心特效
+        // 点击原谅按钮
+        forgiveBtn.addEventListener('click', () => {
+            // 创建特效
             createHearts();
             
             // 显示新图片
-            cuteImage.src = 'img/qin.jpg';
+            cuteImage.src = 'img/sorry2.png';
             
             // 重置按钮大小
             btnSize = 1;
-            kissBtn.style.transform = 'scale(1)';
-            noKissBtn.style.transform = 'translate(0, 0)';
+            forgiveBtn.style.transform = 'scale(1)';
+            noForgiveBtn.style.transform = 'translate(0, 0)';
         });
         
         let btnSize = 1;
         
-        // 创建爱心特效
+        // 创建特效
         function createHearts() {
             const heartCount = 100;
             
